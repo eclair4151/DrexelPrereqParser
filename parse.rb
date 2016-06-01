@@ -1,6 +1,6 @@
-prereq = "ECE 201 [Min Grade: D] (Can be taken Concurrently)(BMES 222 [Min Grade: D] or BIO 201 [Min Grade: D]) and (TDEC 231 [Min Grade: D] or ENGR 103 [Min Grade: D])"
+prereq = "BIO 122 [Min Grade: D] (Can be taken Concurrently) or BIO 141 [Min Grade: D]"
 
-prereq.gsub!('(Can be taken Concurrently) or','$concurrent_or$') # first replace this where the or is visible. ors always appear
+prereq.gsub!('(Can be taken Concurrently) or ','$concurrent_or$') # first replace this where the or is visible. ors always appear
 prereq.gsub!(/\(Can be taken Concurrently\)\Z/,'$concurrent_end$') # then replace all where it is at the end of string
 prereq.gsub!('(Can be taken Concurrently)','$concurrent_and$') # the rest seem to be stuck with nothing so i assume it should be an and
 

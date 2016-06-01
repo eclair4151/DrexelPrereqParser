@@ -11,22 +11,22 @@ Drexel university classes like most other universitys have prerequisites. The pr
 
 
 **Most strings are pretty easy and formated like this**    
-`AADM 650 [Min Grade: C]    
-ACCT 111 [Min Grade: D] or ACCT 115 [Min Grade: D]    
-ACCT 115 [Min Grade: C] and ACCT 116 [Min Grade: C]    
-BUSN 501 [Min Grade: C] or (BUSN 505 [Min Grade: C] and BUSN 506 [Min Grade: C])    
-BMES 460 [Min Grade: D] and BMES 461 [Min Grade: D] and BMES 471 [Min Grade: D] and BMES 472 [Min Grade: D]`    
+`AADM 650 [Min Grade: C]`    
+`ACCT 111 [Min Grade: D] or ACCT 115 [Min Grade: D]`      
+`ACCT 115 [Min Grade: C] and ACCT 116 [Min Grade: C]`        
+`BUSN 501 [Min Grade: C] or (BUSN 505 [Min Grade: C] and BUSN 506 [Min Grade: C])`    
+`BMES 460 [Min Grade: D] and BMES 461 [Min Grade: D] and BMES 471 [Min Grade: D] and BMES 472 [Min Grade: D]`         
     
 
 **This can be parsed using a similar method to parsing an inorder math problem ex: (1 * (2 + 3))    
 using parens as a grouping method and operators (and, or) to split classes.**   
 
-Most classes have simple prereqs like above but some can get very complicated, although shouldn't be an issue for the parser:
+**Most classes have simple prereqs like above but some can get very complicated, although shouldn't be an issue for the parser:**
 
 `(TDEC 115 [Min Grade: D] and ECES 302 [Min Grade: D] and ECES 304 [Min Grade: D] and BMES 325 [Min Grade: D] and BMES 326 [Min Grade: D]) or PHYS 201 [Min Grade: D] and (BIO 203 [Min Grade: D] or BMES 235 [Min Grade: D]) and (MATH 311 [Min Grade: D] or BMES 310 [Min Grade: D]) and (TDEC 222 [Min Grade: D] or ENGR 231 [Min Grade: D]) and ENGR 232 [Min Grade: D]`     
      
 
-The problem occur with many weird cases which have been found 
+**The problem occur with many weird cases which have been found** 
 
 `ARTS 511 [Min Grade: C] (Can be taken Concurrently)`    
 ~~wait this has parens but not for grouping classes? That's going to mess things up but i can get around it~~ SOLVED

@@ -19,7 +19,7 @@ BMES 460 [Min Grade: D] and BMES 461 [Min Grade: D] and BMES 471 [Min Grade: D] 
     
 
 This can be parsed using a similar method to parsing an inorder math problem ex: (1 * (2 + 3))    
-using parens as a gropuing method and operators (and, or) to split classes.   
+using parens as a grouping method and operators (and, or) to split classes.   
 
 Most classes have simple prereqs like above but some can get very complicated, although shouldnt be an issue for the parser:
 
@@ -36,20 +36,20 @@ ARTS 713 \[Min Grade: C\] (Can be taken Concurrently)ARTS 703 [Min Grade: C]
 
 
 BIO 122 \[Min Grade: D\] (Can be taken Concurrently) or BIO 141 [Min Grade: D]    
-//hmm when its cuncurrent but has an 'or' it does put the word in there
+//Hmm when its cuncurrent but has an 'or' it does put the word in there
 
 BIO 500 \[Min Grade: C\], BMES 501 \[Min Grade: C\] (Can be taken Concurrently)    
-//wait, where did this comma come from. Since when do you use commas to seperate. Maybe its only for ones with the (cuncurrent) thing
+//Wait, where did this comma come from. Since when do you use commas to seperate. Maybe its only for ones with the (cuncurrent) thing
 
 or FASH 629 [Min Grade: B], FASH 251 [Min Grade: C] or FASH 629 [Min Grade: B]    
 //This one just starts of with an or, and has a random comma. And the first and last class are the same!
 
-ECE 201 \Min Grade: D\] (Can be taken Concurrently)(BMES 222 [Min Grade: D] or BIO 201 [Min Grade: D]) and (TDEC 231 [Min Grade: D] or ENGR 103 [Min Grade: D])    
-//Tthis one has the cucurrent parens but has more parens right after with no space 
+ECE 201 \[Min Grade: D\] (Can be taken Concurrently)(BMES 222 [Min Grade: D] or BIO 201 [Min Grade: D]) and (TDEC 231 [Min Grade: D] or ENGR 103 [Min Grade: D])    
+//This one has the cucurrent parens but has more parens right after with no space 
 
 
 CHEM 253 \[Min Grade: D\] (Can be taken Concurrently)(CHEM 230 [Min Grade: D] and CHEM 242 [Min Grade: D]) or CHEC 352 [Min Grade: D])    
-//are you kidding me this one just has a trailing ')' that doesnt match with anything
+//Are you kidding me this one just has a trailing ')' that doesnt match with anything
 
 CS 171 [Min Grade: D], PHYS 105 [Min Grade: D]    
-//wait this one just has a comma and its not special. what does the comma mean!
+//Wait this one just has a comma and its not special. What does the comma mean!

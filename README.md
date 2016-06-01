@@ -28,27 +28,27 @@ Most classes have simple prereqs like above but some can get very complicated, a
 
 The problem occur with many weird cases which have been found 
 
-`ARTS 511 \[Min Grade: C\] (Can be taken Concurrently)`    
+`ARTS 511 [Min Grade: C] (Can be taken Concurrently)`    
 ~~wait this has parens but not for grouping classes? That's going to mess things up but i can get around it~~ SOLVED
 
-`ARTS 713 \[Min Grade: C\] (Can be taken Concurrently)ARTS 703 [Min Grade: C]`    
+`ARTS 713 [Min Grade: C] (Can be taken Concurrently)ARTS 703 [Min Grade: C]`    
 ~~wait this one is missing a word, shouldn't there be an 'and', or 'or' in there. There's not even a space so parsing will be annoying~~ SOLVED
 
 
-`BIO 122 \[Min Grade: D\] (Can be taken Concurrently) or BIO 141 [Min Grade: D]`    
+`BIO 122 [Min Grade: D] (Can be taken Concurrently) or BIO 141 [Min Grade: D]`    
 ~~Hmm when its concurrent but has an 'or' it does put the word in there~~ SOLVED
 
-`BIO 500 \[Min Grade: C\], BMES 501 \[Min Grade: C\] (Can be taken Concurrently)`    
+`BIO 500 [Min Grade: C], BMES 501 [Min Grade: C] (Can be taken Concurrently)`    
 ~~Wait, where did this comma come from. Since when do you use commas to separate. Maybe its only for ones with the (concurrent) thing~~ SOLVED
 
 `or FASH 629 [Min Grade: B], FASH 251 [Min Grade: C] or FASH 629 [Min Grade: B]`    
 This one just starts of with an or, and has a random comma. And the first and last class are the same!
 
-`ECE 201 \[Min Grade: D\] (Can be taken Concurrently)(BMES 222 [Min Grade: D] or BIO 201 [Min Grade: D]) and (TDEC 231 [Min Grade: D] or ENGR 103 [Min Grade: D])`    
+`ECE 201 [Min Grade: D] (Can be taken Concurrently)(BMES 222 [Min Grade: D] or BIO 201 [Min Grade: D]) and (TDEC 231 [Min Grade: D] or ENGR 103 [Min Grade: D])`    
 ~~This one has the concurrent parens but has more parens right after with no space~~ SOLVED
 
 
-`CHEM 253 \[Min Grade: D\] (Can be taken Concurrently)(CHEM 230 [Min Grade: D] and CHEM 242 [Min Grade: D]) or CHEC 352 [Min Grade: D])`    
+`CHEM 253 [Min Grade: D] (Can be taken Concurrently)(CHEM 230 [Min Grade: D] and CHEM 242 [Min Grade: D]) or CHEC 352 [Min Grade: D])`    
 Are you kidding me this one just has a trailing ')' that doesn't match with anything
 
 `CS 171 [Min Grade: D], PHYS 105 [Min Grade: D]`    

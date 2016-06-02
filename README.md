@@ -4,10 +4,11 @@
     
 Drexel university classes like most other universitys have prerequisites. The problem is that those prereqs have other preqs and it becomes very tedious to see what classes you need to take a class. couple this with the fact that preqs just come as a very complicated string and it can be very dificult to understand. The point of this project is to try and    
     
-    1) create a parser that will parse a prereq string for a specific class    
-    2) link that graph to the other classes creating a whole dependency tree of classes     
-    3) create some sort of visual method of viewing the tree
-    4) make sure to get around the weird race conditions of the string.    
+    1) parse string into tokens - DONE
+    2) make sure to get around the weird race conditions of the string when tokenizing -ALMOST DONE
+    3) create a parser that will parse the token list into a tree - IN PROGRESS
+    4) link that tree to the other class trees creating a whole dependency graph of classes     
+    5) create some sort of visual method of viewing the tree    
 
 
 **Most strings are pretty easy and formated like this**    
@@ -26,7 +27,7 @@ using parens as a grouping method and operators (and, or) to split classes.**
 `(TDEC 115 [Min Grade: D] and ECES 302 [Min Grade: D] and ECES 304 [Min Grade: D] and BMES 325 [Min Grade: D] and BMES 326 [Min Grade: D]) or PHYS 201 [Min Grade: D] and (BIO 203 [Min Grade: D] or BMES 235 [Min Grade: D]) and (MATH 311 [Min Grade: D] or BMES 310 [Min Grade: D]) and (TDEC 222 [Min Grade: D] or ENGR 231 [Min Grade: D]) and ENGR 232 [Min Grade: D]`     
      
 
-**The problem occur with many weird cases which have been found** 
+**The problems occur with many weird cases which have been found** 
 
 `ARTS 511 [Min Grade: C] (Can be taken Concurrently)`    
 ~~wait this has parens but not for grouping classes? That's going to mess things up but i can get around it~~ SOLVED
@@ -42,7 +43,7 @@ using parens as a grouping method and operators (and, or) to split classes.**
 ~~Wait, where did this comma come from. Since when do you use commas to separate. Maybe its only for ones with the (concurrent) thing~~ SOLVED
 
 `or FASH 629 [Min Grade: B], FASH 251 [Min Grade: C] or FASH 629 [Min Grade: B]`    
-This one just starts of with an or, and has a random comma. And the first and last class are the same!
+~~This one just starts of with an or, and has a random comma. And the first and last class are the same!~~ SOLVED (Mostly, nothing i can do about duplicate classes)
 
 `ECE 201 [Min Grade: D] (Can be taken Concurrently)(BMES 222 [Min Grade: D] or BIO 201 [Min Grade: D]) and (TDEC 231 [Min Grade: D] or ENGR 103 [Min Grade: D])`    
 ~~This one has the concurrent parens but has more parens right after with no space~~ SOLVED

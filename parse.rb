@@ -1,4 +1,55 @@
-prereq = "or FASH 629 [Min Grade: B], FASH 251 [Min Grade: C] or FASH 629 [Min Grade: B]"
+class Expression
+
+  def initialize(values, operator)
+    if values.kind_of?(Array)
+      @values=values
+      @operator = operator
+    elsif values != nil
+      @values=[values]
+      @operator = operator
+    else
+      @values=[]
+      @operator = nil
+    end
+  end
+
+  def add_value(value)
+    @values.push(value)
+  end
+
+  def get_operator
+    @operator
+  end
+  def set_operator(oper)
+    @operator = oper
+  end
+
+  def pop_value
+    @values.pop
+  end
+end
+
+
+
+
+
+
+def order_operation(token)
+  if token == '(' or token == ')'
+    3
+  elsif token == 'and'
+    2
+  elsif token == 'or'
+    2
+  else
+    0
+  end
+end
+
+
+
+
+prereq = "(TDEC 115 [Min Grade: D] and ECES 302 [Min Grade: D] and ECES 304 [Min Grade: D] and BMES 325 [Min Grade: D] and BMES 326 [Min Grade: D]) or PHYS 201 [Min Grade: D] and (BIO 203 [Min Grade: D] or BMES 235 [Min Grade: D]) and (MATH 311 [Min Grade: D] or BMES 310 [Min Grade: D]) and (TDEC 222 [Min Grade: D] or ENGR 231 [Min Grade: D]) and ENGR 232 [Min Grade: D]"
 
 if prereq.start_with?('or ')
   prereq.sub!('or ', '') #get rid of things that start with or.
@@ -19,3 +70,37 @@ prereq.gsub!('$concurrent_end$', '(Can be taken Concurrently)') # replace the en
 tokens = prereq.split('|').reject { |s| s.empty? } # split but throw away anything empty
 
 puts tokens
+
+root = Expression.new(nil,nil)
+node_stack = [root]
+
+for token in tokens
+  if order_operation(token) == 0
+    node_stack.last.add_value(Expression.new(token,nil))
+
+  elsif order_operation(token) == 3 and token == '('
+
+    new_node = Expression.new(nil,nil)
+    node_stack.last.add_value(new_node)
+    node_stack.push(new_node)
+
+  elsif order_operation(token) == 3 and token == ')'
+    node_stack.pop
+
+  elsif order_operation(token) == 2
+    if node_stack.last.get_operator == nil
+      node_stack.last.set_operator(token)
+    end
+
+    if node_stack.last.get_operator != token
+      last = node_stack.last.pop_value
+      new_node = Expression.new(last,token)
+      node_stack.last.add_value(new_node)
+      node_stack.push(new_node)
+    end
+
+  end
+end
+
+print "ters"
+#here root has been parsed
